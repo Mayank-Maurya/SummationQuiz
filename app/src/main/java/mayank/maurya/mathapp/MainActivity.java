@@ -15,7 +15,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     TextView counter,question,questioncount;
-    Button op1,op2,op3,op4;
+    TextView op1,op2,op3,op4;
     ImageButton exit;
     public void initialize()
     {
@@ -31,18 +31,14 @@ public class MainActivity extends AppCompatActivity {
     public void setit(int n,int choice)
     {
         if(choice==1) {
-            RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.activity_main);
-            remoteViews.setTextViewText(R.id.optionbtn1, n + "");
+            op1.setText(String.valueOf(n));
         }else
         if(choice==2) {
-            RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.activity_main);
-            remoteViews.setTextViewText(R.id.optionbtn2, n + "");
+            op2.setText(String.valueOf(n));
         }else if(choice==3) {
-            RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.activity_main);
-            remoteViews.setTextViewText(R.id.optionbtn3, n + "");
+            op3.setText(String.valueOf(n));
         }else if(choice==4) {
-            RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.activity_main);
-            remoteViews.setTextViewText(R.id.optionbtn4, n + "");
+            op4.setText(String.valueOf(n));
         }
 
     }
@@ -57,37 +53,34 @@ public class MainActivity extends AppCompatActivity {
         int num=random.nextInt(80-20)+20;
         int num2=random.nextInt(80-20)+20;
         question.setText(num+" + "+num2+" = ?");
-        int ans=random.nextInt(2)+3;
+        int ans=random.nextInt(5-1)+1;
         for(int i=1;i<=4;i++)
         {
             if(i==ans)
             {
                if(i==1)
                {
-                   RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.activity_main);
-                   remoteViews.setTextViewText(R.id.optionbtn1, num+num2+"");
+                   op1.setText(String.valueOf(num+num2));
+
                    break;
                }
                 if(i==2)
                 {
-                    RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.activity_main);
-                    remoteViews.setTextViewText(R.id.optionbtn2, num+num2+"");
+                    op2.setText(String.valueOf(num+num2));
 
 
                     break;
                 }
                 if(i==3)
                 {
-                    RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.activity_main);
-                    remoteViews.setTextViewText(R.id.optionbtn3, num+num2+"");
+                    op3.setText(String.valueOf(num+num2));
 
 
                     break;
                 }
                 if(i==4)
                 {
-                    RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.activity_main);
-                    remoteViews.setTextViewText(R.id.optionbtn4, num+num2+"");
+                    op4.setText(String.valueOf(num+num2));
 
 
                     break;
